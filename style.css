@@ -1,0 +1,156 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #555555;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    transition: background-color 0.3s;
+}
+
+body.hovered {
+    background-color: #333333;
+}
+
+#chatBox {
+    width: 97%;
+    height: calc(100vh - 120px);
+    max-height: 500px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow-y: auto;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.message {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.message.userMessage {
+    align-items: flex-end;
+}
+
+.message.botMessage {
+    align-items: flex-start;
+}
+
+.message-text {
+    max-width: 60%;
+    padding: 10px;
+    border-radius: 12px;
+    font-size: 16px;
+    line-height: 1.4;
+    position: relative;
+    background-color: #f1f1f1;
+}
+
+.userMessage .message-text {
+    background-color: #007bff;
+    color: white;
+    border-radius: 12px 12px 0 12px;
+}
+
+.botMessage .message-text {
+    background-color: #e0e0e0;
+    color: #333;
+    border-radius: 12px 12px 12px 0;
+}
+
+.message-sender {
+    font-size: 12px;
+    color: #aaa;
+    margin-top: 5px;
+    text-align: right;
+    align-self: flex-end;
+}
+
+form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px;
+    background-color: #555555;
+    position: relative;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+form:hover {
+    background-color: #333333;
+}
+
+form:hover .Send-btn,
+form:hover #startRecognitionBtn {
+    border-color: transparent;
+}
+
+/* Stil für den Input */
+input {
+    flex: 1;
+    padding: 12px 16px;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    margin-right: 10px; /* Abstand zum ersten Button */
+    outline: none;
+    font-size: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s, border-color 0.3s;
+}
+
+input:hover {
+    border-color: #007bff;
+}
+
+input:focus {
+    border-color: #007bff;
+    box-shadow: 0 4px 6px rgba(0, 123, 255, 0.2);
+}
+
+/* Stil für die Buttons */
+.Send-btn,
+#startRecognitionBtn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #555555;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+    margin-left: 10px;
+    border: 0.5px solid white;
+}
+
+.Send-btn:hover,
+#startRecognitionBtn:hover {
+    background-color: #555555;
+    border-color: transparent;
+}
+
+/* Stil für den StartRecognition Button */
+#startRecognitionBtn:hover {
+    background-color: #007bff;
+    border-color: transparent;
+}
+
+/* Stil für den StartRecognition Button */
+#startRecognitionBtn {
+    border-radius: 50%;
+    padding: 10px 13px;
+}
+
+#startRecognitionBtn.recording {
+    background-color: #ff0000; /* Rot für Aufnahme-Aktivität */
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5); /* Leicht leuchtender Effekt */
+}
